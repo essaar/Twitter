@@ -17,6 +17,60 @@ class TweetCellTableViewCell: UITableViewCell {
     @IBOutlet weak var ProfileImageView: UIImageView!
     @IBOutlet weak var UserNameLabel: UILabel!
     @IBOutlet weak var TweetContentLabel: UILabel!
+    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var favButton: UIButton!
+    
+    var favourited:Bool = false
+    var tweetId:Int = -1
+    var retweeted:Bool = false
+    
+    @IBAction func retweetTweet(_ sender: Any) {
+        TwitterAPICaller.client?.favoriteTweet(tweetId: tweetId, success: {
+            self.setRetweeted(true)
+        }, failure: { (Error) in
+            print("Retweet did not succeed : \(Error)")
+        })
+    }
+    
+    @IBAction func favTweet(_ sender: Any) {
+        let toBeFavorited = !favourited
+        if(toBeFavorited) {
+            TwitterAPICaller.client?.favoriteTweet(tweetId: tweetId, success: {
+                self.setFavourite(true)
+            }, failure: { (Error) in
+                print("Favorite did not succeed : \(Error)")
+            })
+        }
+        else {
+            TwitterAPICaller.client?.unfavoriteTweet(tweetId: tweetId, success: {
+                self.setFavourite(false)
+            }, failure: { (Error) in
+                print("Unfavorite did not succeed : \(Error)")
+            })
+        }
+    }
+    
+    func setFavourite(_ isFavourited:Bool) {
+        favourited = isFavourited
+        if(favourited) {
+            favButton.setImage(UIImage(named: "favor-icon"), for: UIControl.State.normal)
+        }
+        else {
+            favButton.setImage(UIImage(named: "favor-icon-1"), for: UIControl.State.normal)
+        }
+    }
+    
+    func setRetweeted(_ isRetweeted:Bool) {
+        retweeted = isRetweeted
+        if(favourited) {
+            favButton.setImage(UIImage(named: "retween-icon-green"), for: UIControl.State.normal)
+            retweetButton.isEnabled = false
+        }
+        else {
+            favButton.setImage(UIImage(named: "retween-icon"), for: UIControl.State.normal)
+            retweetButton.isEnabled = true
+        }
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
