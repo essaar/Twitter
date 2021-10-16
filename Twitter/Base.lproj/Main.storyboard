@@ -169,9 +169,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="RmU-PR-osh">
+                                <rect key="frame" x="15" y="110" width="379" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="379" id="bzB-Cw-7aV"/>
+                                    <constraint firstAttribute="height" constant="20" id="yUz-GX-8DV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9wE-qi-P7k">
-                                <rect key="frame" x="10" y="98" width="394" height="172"/>
+                                <rect key="frame" x="10" y="128" width="394" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="6uz-GG-tne"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -180,9 +193,10 @@
                         <viewLayoutGuide key="safeArea" id="11i-DQ-1bR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9wE-qi-P7k" firstAttribute="top" secondItem="RmU-PR-osh" secondAttribute="bottom" constant="-2" id="87m-2X-Ycp"/>
+                            <constraint firstItem="RmU-PR-osh" firstAttribute="top" secondItem="11i-DQ-1bR" secondAttribute="top" constant="22" id="Cqi-ez-Qkl"/>
                             <constraint firstItem="11i-DQ-1bR" firstAttribute="trailing" secondItem="9wE-qi-P7k" secondAttribute="trailing" constant="10" id="Ggd-Ka-iL3"/>
-                            <constraint firstItem="9wE-qi-P7k" firstAttribute="top" secondItem="11i-DQ-1bR" secondAttribute="top" constant="10" id="IPs-nk-0DE"/>
-                            <constraint firstItem="11i-DQ-1bR" firstAttribute="bottom" secondItem="9wE-qi-P7k" secondAttribute="bottom" constant="592" id="OVd-ND-A9i"/>
+                            <constraint firstItem="RmU-PR-osh" firstAttribute="leading" secondItem="9wE-qi-P7k" secondAttribute="leading" constant="5" id="P1B-fU-ei7"/>
                             <constraint firstItem="9wE-qi-P7k" firstAttribute="leading" secondItem="11i-DQ-1bR" secondAttribute="leading" constant="10" id="jha-oa-OAm"/>
                         </constraints>
                     </view>
@@ -201,6 +215,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tweetCharCount" destination="RmU-PR-osh" id="Guh-iC-ULR"/>
                         <outlet property="tweetTextView" destination="9wE-qi-P7k" id="60R-ys-bpQ"/>
                     </connections>
                 </viewController>
@@ -269,6 +284,9 @@
         <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
