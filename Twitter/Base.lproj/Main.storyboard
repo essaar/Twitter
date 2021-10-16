@@ -96,8 +96,7 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="favor-icon-1" title=""/>
                                             <connections>
-                                                <action selector="favButton:" destination="D4o-DA-yCe" eventType="touchUpInside" id="Fdw-fO-lJZ"/>
-                                                <action selector="favTweet:" destination="D4o-DA-yCe" eventType="touchUpInside" id="VkF-tq-UJM"/>
+                                                <action selector="favoriteTweet:" destination="D4o-DA-yCe" eventType="touchUpInside" id="E1N-Ca-zjF"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZI-oJ-F0M" userLabel="retweetButton">
@@ -109,7 +108,7 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="retweet-icon" title=""/>
                                             <connections>
-                                                <action selector="retweetTweet:" destination="D4o-DA-yCe" eventType="touchUpInside" id="MSG-bF-m12"/>
+                                                <action selector="retweetTweet:" destination="D4o-DA-yCe" eventType="touchUpInside" id="PNP-DG-Hgi"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -133,7 +132,7 @@
                                     <outlet property="ProfileImageView" destination="gRC-zy-cNc" id="4T4-DK-IYY"/>
                                     <outlet property="TweetContentLabel" destination="otP-p5-Xrz" id="ESE-i3-SkW"/>
                                     <outlet property="UserNameLabel" destination="geb-Rh-eBV" id="oUh-rS-VfE"/>
-                                    <outlet property="favButton" destination="aSe-IB-S0T" id="SiQ-l2-Fyv"/>
+                                    <outlet property="favButton" destination="aSe-IB-S0T" id="IHY-Ol-1J1"/>
                                     <outlet property="retweetButton" destination="JZI-oJ-F0M" id="OcQ-4H-uuD"/>
                                 </connections>
                             </tableViewCell>
