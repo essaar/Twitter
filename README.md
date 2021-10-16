@@ -52,7 +52,8 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-Unable to record the gif as I'm stuck with API request limits (refered Slack: https://codepath.slack.com/archives/C02B989KQKB/p1632713370436500?thread_ts=1632713121.431900&cid=C02B989KQKB)
+Unable to record the gif as I'm stuck with API request limits (referred Slack: https://codepath.slack.com/archives/C02B989KQKB/p1632713370436500?thread_ts=1632713121.431900&cid=C02B989KQKB)
+
 <img width="901" alt="Screen Shot 2021-10-15 at 11 45 31 PM" src="https://user-images.githubusercontent.com/27513272/137572616-8adf3f89-cec3-455a-ad43-5d57c56fae7b.png">
 
 
